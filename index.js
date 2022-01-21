@@ -8,11 +8,9 @@ var open;
       "https://api.openportcheck.net/check?ip" + ip + "&port=" + port
     )
     .then((response) => { // If the GET request is successful, this block is executed
-     open = response.data.open;
+     return response.data
     })
     .catch((err) => {
       console.error(err); // Error handler
     });
-
-    return open;
 };
